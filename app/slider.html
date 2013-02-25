@@ -1,0 +1,106 @@
+<!--
+        http://www.designchemical.com/blog/index.php/jquery/jquery-simple-horizontal-accordion/
+        http://jsfiddle.net/nribeka/p5U7B/1/
+        look at confluence implementation and facebook implementation
+-->
+
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Muzima</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrap-responsive.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <style>
+        #sidebar {
+            min-height: 100%;
+            overflow: hidden;
+            position: absolute;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+
+    <button type="button" class="btn btn-navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+
+    <div id="sidebar">
+        <ul class="nav nav-tabs nav-stacked">
+            <li class="active"><a href="#/home">Home<i class="icon-chevron-right"></i></a></li>
+            <li class="divider"/>
+            <li><a href="#/cohorts">Cohorts<i class="icon-chevron-right"></i></a></li>
+            <li><a href="#/settings">Settings<i class="icon-chevron-right"></i></a></li>
+            <li><a href="#/about">About<i class="icon-chevron-right"></i></a></li>
+        </ul>
+    </div>
+
+    <!-- Begin page content -->
+    <div id="wrap">
+        <div class="container">
+            <div class="page-header">
+                <h3>Available Cohorts</h3>
+            </div>
+            <div>
+                <ul class="nav nav-tabs nav-stacked">
+                    <li ng-repeat="cohort in cohorts">
+                        <a href="#/patients/{{cohort.uuid}}">
+                            {{cohort.name}}
+                            <i class="icon-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+                <span>Available cohorts: {{cohorts.length}}</span>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+
+    <div id="footer-content">
+        <div class="container">
+            <p class="muted credit">
+                <small>Copyright &copy; <a>Muzima Team</a> 2013</small>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+-->
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="lib/bootstrap/jquery.js"></script>
+<script src="lib/bootstrap/bootstrap-transition.js"></script>
+<script src="lib/bootstrap/bootstrap-alert.js"></script>
+<script src="lib/bootstrap/bootstrap-modal.js"></script>
+<script src="lib/bootstrap/bootstrap-dropdown.js"></script>
+<script src="lib/bootstrap/bootstrap-scrollspy.js"></script>
+<script src="lib/bootstrap/bootstrap-tab.js"></script>
+<script src="lib/bootstrap/bootstrap-tooltip.js"></script>
+<script src="lib/bootstrap/bootstrap-popover.js"></script>
+<script src="lib/bootstrap/bootstrap-button.js"></script>
+<script src="lib/bootstrap/bootstrap-collapse.js"></script>
+<script src="lib/bootstrap/bootstrap-typeahead.js"></script>
+<script src="lib/bootstrap/bootstrap-carousel.js"></script>
+<script src="lib/underscore/underscore.js"></script>
+<script src="lib/jsonform/jsonform.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/directives.js"></script>
+</body>
+</html>
